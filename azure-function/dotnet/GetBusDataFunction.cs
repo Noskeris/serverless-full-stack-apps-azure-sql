@@ -12,4 +12,9 @@ public class GetBusDataFunction
     public async Task GetBusData(
         [TimerTrigger("*/15 * * * * *")] TimerInfo timerInfo) =>
         await _busDataManagerService.ProcessBusDataAsync();
+
+    [FunctionName("GetDayQuartz")]
+    public async Task GetDayQuartz(
+        [TimerTrigger("*/15 * * * * *")] TimerInfo timerInfo) =>
+        await _busDataManagerService.ProcessGetDayQuartzAsync();
 }
